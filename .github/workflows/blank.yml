@@ -11,7 +11,7 @@ permissions:
 jobs:
   job:
     name: terraform init
-    runs-on: mygithub-runner
+    runs-on: Mylable
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
