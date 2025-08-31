@@ -1,0 +1,15 @@
+name: "my github workflows"
+
+on: 
+  push:
+    branches: 
+      - 'main'
+      - 'feature'
+      
+jobs: 
+  job:
+    name:  terraform init
+    runs-on: Mylable
+    steps:
+      - name: terraform installer
+    
