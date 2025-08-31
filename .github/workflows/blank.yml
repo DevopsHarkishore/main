@@ -1,15 +1,27 @@
-name: "my github workflows"
+name: "my first github action"
 
-on: 
+on:
   push:
     branches: 
+      - 'feature/**'
       - 'main'
-      - 'feature'
-      
-jobs: 
+permissions:
+  id-token: write
+  contents: read
+jobs:
   job:
-    name:  terraform init
-    runs-on: Mylable
+    name: terraform init
+    runs-on: mygithub-runner
     steps:
-      - name: terraform installer
-    
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Print India
+        run: echo "I love my India"
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+  
+      - name: Install Terraform
+        uses: little-core-labs/install-terraform@v2.0.0
+        with:
+         version: 1.13.0
+          
